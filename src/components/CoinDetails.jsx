@@ -50,7 +50,7 @@ const CoinDetails = () => {
   }
 
   return (
-    <Container>
+    <Container maxW={"container.xl"}>
       {loading ? (
         <Loader />
       ) : (

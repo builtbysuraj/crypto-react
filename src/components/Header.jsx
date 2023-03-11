@@ -12,13 +12,13 @@ const Header = () => {
       align="center"
       justify="center"
     >
-      <Button fontSize={17} color={"white"} variant={"unstyled"}>
+      <Button fontSize={16} color={"white"} variant={"unstyled"}>
         <Link to={"/"}>Home</Link>
       </Button>
-      <Button fontSize={17} color={"white"} variant={"unstyled"}>
+      <Button fontSize={16} color={"white"} variant={"unstyled"}>
         <Link to={"/coins"}>Coins</Link>
       </Button>
-      <Button fontSize={17} color={"white"} variant={"unstyled"}>
+      <Button fontSize={16} color={"white"} variant={"unstyled"}>
         <Link to={"/exchanges"}>Exchanges</Link>
       </Button>
     </HStack>
