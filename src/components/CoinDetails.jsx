@@ -45,10 +45,6 @@ const CoinDetails = () => {
     fetchCoin();
   }, [params.id, curr]);
 
-  if (error) {
-    // return <ErrorCompo msg={"Error while fetching coin details"} />;
-  }
-
   return (
     <Container maxW={"container.xl"}>
       {loading ? (
@@ -142,9 +138,10 @@ const CustomBar = ({ high, low }) => (
     <Progress value={55} colorScheme={"teal"} w={"full"} />
     <HStack justifyContent={"space-between"} w={"full"}>
       <Badge children={low} colorScheme={"red"} />
-      <Text fontSize={"sm"}>24H Range</Text>
+      <Text fontSize={"sm"}>24Hr Range</Text>
       <Badge children={high} colorScheme={"green"} />
     </HStack>
   </VStack>
 );
+
 export default CoinDetails;
