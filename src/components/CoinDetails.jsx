@@ -4,7 +4,6 @@ import {
   Container,
   HStack,
   Image,
-  Progress,
   Radio,
   RadioGroup,
   Stat,
@@ -18,7 +17,6 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ErrorCompo from "./ErrorCompo";
 import Loader from "./Loader";
 import { server } from "../App";
 
@@ -58,11 +56,11 @@ const CoinDetails = () => {
               <Radio value="usd">USD</Radio>
             </HStack>
           </RadioGroup>
-          <VStack spacing={"4"} p="6" alignItems={"flex-start"}>
+          <VStack spacing={"4"} p="6">
             <Image
               src={coin.image.large}
-              w={"16"}
-              h={"16"}
+              w={"44"}
+              h={"44"}
               objectFit={"contain"}
             />
             <Stat>
@@ -87,10 +85,6 @@ const CoinDetails = () => {
               bgColor={"blackAlpha.800"}
               color={"white"}
             >{`#${coin.market_cap_rank}`}</Badge>
-            <CustomBar
-              high={`${currencySymbol}${coin.market_data.high_24h[curr]}`}
-              low={`${currencySymbol}${coin.market_data.low_24h[curr]}`}
-            />
             <Box w={"full"} p="4">
               <Item
                 title={"Max Supply"}
@@ -131,17 +125,6 @@ const Item = ({ title, value }) => (
     </Text>
     <Text>{value}</Text>
   </HStack>
-);
-
-const CustomBar = ({ high, low }) => (
-  <VStack w={"full"}>
-    <Progress value={55} colorScheme={"teal"} w={"full"} />
-    <HStack justifyContent={"space-between"} w={"full"}>
-      <Badge children={low} colorScheme={"red"} />
-      <Text fontSize={"sm"}>24Hr Range</Text>
-      <Badge children={high} colorScheme={"green"} />
-    </HStack>
-  </VStack>
 );
 
 export default CoinDetails;
